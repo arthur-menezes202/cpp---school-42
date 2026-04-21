@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:32:40 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/21 15:43:34 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:28:10 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-Contact::Contact(int id, std::string _name, std::string _last_name, std::string _nick_name, std::string _phone_number, std::string _secret)
-{
-	this->_name = _name;
-	this->_last_name = _last_name;
-	this->_nick_name = _nick_name;
-	this->_phone_number = _phone_number;
-	this->_secret = _secret;
-}
 
 Contact::Contact() {}
 Contact::~Contact() {}

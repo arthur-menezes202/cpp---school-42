@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:32:34 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/21 16:07:15 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:33:16 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,7 @@
 #include <iostream>
 #include <iomanip>
 #include <ctype.h>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
 #endif

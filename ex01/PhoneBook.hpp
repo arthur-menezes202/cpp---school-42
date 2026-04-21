@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:32:29 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/21 15:52:16 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:20:36 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class PhoneBook {
 		PhoneBook();
 		~PhoneBook();
 		
-		std::string validation_input_string(std::string input);
-		int validation_input_number(int number);
+		std::string validation_input_string(std::string prompt);
+		std::string validation_input_number(std::string prompt);
 		void add_phone_book();
 		void search_contact();
 
