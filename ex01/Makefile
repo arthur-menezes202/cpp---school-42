@@ -1,9 +1,10 @@
 CXX      := g++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+# CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+CXXFLAGS := 
 
 TARGET   := megaphone
 OBJDIR   := obj
-SRCS     := megaphone.cpp
+SRCS     := $(shell find -name '*.cpp')
 OBJS     := $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
 all: $(TARGET)
