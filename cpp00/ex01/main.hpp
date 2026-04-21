@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 13:32:48 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/21 13:32:49 by armeneze         ###   ########.fr       */
+/*   Created: 2026/04/21 13:32:34 by armeneze          #+#    #+#             */
+/*   Updated: 2026/04/21 16:07:15 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MAIN_HPP
+#define MAIN_HPP
 #include <iostream>
+#include <iomanip>
 #include <ctype.h>
-
-int main(int ac, char **av) {
-	int x;
-
-	if(ac < 2)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	}
-	for (int y = 1; y < ac; y ++)
-	{
-		x = 0;
-		while (av[y][x] != '\0') {
-			std::cout << (char) toupper(av[y][x]);
-			x ++;
-		}
-	}
-	std::cout << "\n";
-	return 0;
-}
+#endif

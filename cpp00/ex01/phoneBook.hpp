@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 13:32:48 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/21 13:32:49 by armeneze         ###   ########.fr       */
+/*   Created: 2026/04/21 13:32:29 by armeneze          #+#    #+#             */
+/*   Updated: 2026/04/21 15:52:16 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <ctype.h>
+#ifndef PHONE_BOOK_HPP
+# define PHONE_BOOK_HPP
 
-int main(int ac, char **av) {
-	int x;
+# include "main.hpp"
+# include "Contact.hpp"
+class PhoneBook {
+	private:
+		Contact _contacts[8];
+		int _index;
+	public:
+		PhoneBook();
+		~PhoneBook();
+		
+		std::string validation_input_string(std::string input);
+		int validation_input_number(int number);
+		void add_phone_book();
+		void search_contact();
 
-	if(ac < 2)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	}
-	for (int y = 1; y < ac; y ++)
-	{
-		x = 0;
-		while (av[y][x] != '\0') {
-			std::cout << (char) toupper(av[y][x]);
-			x ++;
-		}
-	}
-	std::cout << "\n";
-	return 0;
-}
+};
+
+void addPhoneBook();
+#endif
