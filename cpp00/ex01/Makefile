@@ -1,7 +1,7 @@
 CXX      := g++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
-TARGET   := megaphone
+TARGET   := phonebook
 OBJDIR   := obj
 SRCS     := Contact.cpp\
 			main.cpp\
