@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:32:31 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/21 17:33:32 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/22 10:19:49 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void PhoneBook::search_contact()
 	int limit;
 	std::string input;
 	PhoneBook pb;
-	
+
 	if (this->_index > 8)
 		limit = 8;
 	else

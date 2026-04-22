@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 17:52:48 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/22 13:52:00 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/22 13:54:46 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ void Account::_displayTimestamp() {
 	time(&raw_time);
 	time_info = localtime(&raw_time);
 	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", time_info);
-	// std::cout << "[" << buffer << "] ";
-	std::cout << "[19920104_091532] ";
+	std::cout << "[" << buffer << "] ";
 
 	return ;
 }
