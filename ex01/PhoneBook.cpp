@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:32:31 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/22 10:19:49 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:43:43 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void PhoneBook::add_phone_book()
 	input = pb.validation_input_string("Write Last Name: ");
 	new_contact.set_last_name(input);
 
-	input = pb.validation_input_string("Write Surname: ");
+	input = pb.validation_input_string("Write Nick Name: ");
 	new_contact.set_nick_name(input);
 
 	input = pb.validation_input_number("Write Phone Number: ");
@@ -112,9 +112,9 @@ void PhoneBook::search_contact()
 	else
 		limit = this->_index;
 
-	std::cout << "|-------------------------------------------|" << std::endl;
-	std::cout << "|     Index|      Name| Last Name|   Surname|" << std::endl;
-	std::cout << "|-------------------------------------------|" << std::endl;
+	std::cout << "|--------------------------------------------|" << std::endl;
+	std::cout << "|     Index|      Name| Last Name|  Nick Name|" << std::endl;
+	std::cout << "|--------------------------------------------|" << std::endl;
 
 	for (int i = 0; i < limit; i++) {
 		std::cout << "|" << std::setw(10) << i;
@@ -123,7 +123,7 @@ void PhoneBook::search_contact()
 		std::cout << "|" << std::setw(10) << format_string(_contacts[i].get_nick_name());
 		std::cout << "|" << std::endl;
 	}
-	std::cout << "|-------------------------------------------|" << std::endl;
+	std::cout << "|--------------------------------------------|" << std::endl;
 	
 	int all;
 
@@ -135,6 +135,10 @@ void PhoneBook::search_contact()
 	{
         all = this->_index;
 	}
+	if(this->_index == 0)
+	{
+		return ;
+	}
 	while(42)
 	{
 		input = pb.validation_input_number("please, insert the index for more informations: ");
@@ -143,7 +147,7 @@ void PhoneBook::search_contact()
 		{
 			std::cout << "Name: " << _contacts[index].get_name() << std::endl;
 			std::cout << "Last Name: " << _contacts[index].get_last_name() << std::endl;
-			std::cout << "Surname: " << _contacts[index].get_nick_name() << std::endl;
+			std::cout << "Nick Name: " << _contacts[index].get_nick_name() << std::endl;
 			std::cout << "Number: " << _contacts[index].get_phone_number() << std::endl;
 			std::cout << "Secret: " << _contacts[index].get_secret() << std::endl;
 			break;
