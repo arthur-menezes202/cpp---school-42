@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 16:53:52 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/24 18:10:59 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/27 14:31:04 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ HumanB::HumanB(std::string name) {
 
 HumanB::~HumanB() {}
 
-void HumanB::setWeapon(Weapon* obj){
-	this->weaponPtr = obj;
+void HumanB::setWeapon(Weapon &ptr){
+	this->weaponPtr = &ptr;
 }
 
 void HumanB::attack() {
