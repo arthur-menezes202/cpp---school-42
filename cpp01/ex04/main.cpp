@@ -5,70 +5,73 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 18:13:45 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/25 18:26:16 by armeneze         ###   ########.fr       */
+/*   Created: 2026/04/27 11:57:31 by armeneze          #+#    #+#             */
+/*   Updated: 2026/04/27 11:58:15 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <cstdio>
 
-int main(int ac, char **av)
-{
-	if(ac != 4)
-	{
-		std::cout << "<name file> <s1> <s2>" << std::endl;
-		return 1;
-	}
-	std::string av1 = av[1];
-	std::string av2 = av[2];
-	if(av1.empty() == 1 || av2.empty() == 1)
-	{
-		std::cout << "Error: empty argument." << std::endl;
-		return 1;
-	}
-	std::ifstream MyReadFile(av[1]);
-	if (!MyReadFile.is_open()) {
-		perror("Error");
-		return 1;
-	}
-	std::string textFile;
-	std::string nameFile = av[3];
-	nameFile += ".replace";
+std::string transform_line(std::string line, const std::string& s1, const std::string& s2) {
+	if (s1.empty()) return line;
 
-	int j;
-	int i;
-	int first = 0;
-	std::ofstream MyFile(nameFile);
-	while (getline (MyReadFile, textFile)) {
-		i = 0;
-		if(first == 1)
-		{
-			MyFile << std::endl;
-		}
-		while(textFile[i] != '\0')
-		{
-			j = 0;
-			if(textFile[i] == av[2][j])
-			{
-				while(textFile[i + j] == av[2][j])
-				{
-					j ++;
-				}
-				std::cout << j << std::endl;
-				if(av[2][j] == '\0')
-				{
-					MyFile << av[3];
-					i += j;
-				}
-			}
-			MyFile << textFile[i];
-			i++;
-			first = 1;
-		}
+	std::string result;
+	size_t pos = 0;
+	size_t found_pos;
+	while ((found_pos = line.find(s1, pos)) != std::string::npos) {
+		result.append(line, pos, found_pos - pos);
+		result.append(s2);
+		pos = found_pos + s1.length();
 	}
-
-    MyFile.close();
-	MyReadFile.close();
+	result.append(line, pos, std::string::npos);
 	
+	return result;
+}
+
+int main(int ac, char **av) {
+	if (ac != 4) {
+		std::cerr << "Usage: ./replace <filename> <s1> <s2>" << std::endl;
+		return 1;
+	}
+
+	std::string filename = av[1];
+	std::string s1 = av[2];
+	std::string s2 = av[3];
+
+	if (s1.empty()) {
+		std::cerr << "Error: s1 (string to find) cannot be empty." << std::endl;
+		return 1;
+	}
+	std::ifstream inputFile(filename.c_str());
+	if (!inputFile.is_open()) {
+		perror("Error opening input file");
+		return 1;
+	}
+	std::ofstream outputFile((filename + ".replace").c_str());
+	if (!outputFile.is_open()) {
+		perror("Error creating output file");
+		inputFile.close();
+		return 1;
+	}
+
+	std::string line;
+	bool first_line = true;
+	while (std::getline(inputFile, line)) {
+		if (!first_line) {
+			outputFile << "\n";
+		}
+		if (!line.empty() && line[line.size() - 1] == '\r') {
+			line.erase(line.size() - 1);
+		}
+		outputFile << transform_line(line, s1, s2);
+		
+		first_line = false;
+	}
+
+	inputFile.close();
+	outputFile.close();
+	return 0;
 }
