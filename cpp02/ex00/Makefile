@@ -1,8 +1,7 @@
 CXX      := c++
-# CXXFLAGS := -Wall -Wextra -Werror -std=c++98
-CXXFLAGS :=
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
-TARGET   := fco
+TARGET   := fixed
 OBJDIR   := obj
 SRCS     := main.cpp \
 			Fixed.cpp
