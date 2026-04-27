@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:00:27 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/27 17:27:28 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/27 18:46:49 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,20 @@ Fixed::Fixed()
 {
 	this->numberFixed = 0;
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int n)
+{
+	int32_t fixed_point_value = n << _fractional_bits;
+	this->numberFixed = fixed_point_value;
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float n)
+{
+	int32_t fixed_point_value = roundf(n * (1 << _fractional_bits));
+	this->numberFixed = fixed_point_value;
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &other)
@@ -39,11 +53,28 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->numberFixed;
 }
 
 void Fixed::setRawBits( int const raw )
 {
 	this->numberFixed = raw;
+}
+
+std::ostream & operator<<(std::ostream & out, const Fixed & obj) {
+    float displayValue = obj.toFloat(); 
+    out << displayValue;
+    return out;
+}
+
+float Fixed::toFloat( void ) const
+{
+	float result = (float)this->numberFixed / (1 << _fractional_bits);
+	return result;
+}
+
+int Fixed::toInt( void ) const
+{
+	int result = (this->numberFixed>>_fractional_bits);
+	return result;
 }
