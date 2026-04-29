@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:00:27 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/28 19:50:52 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/29 16:05:36 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,7 @@ Fixed& Fixed::operator=(const Fixed &other) {
 	return *this;
 }
 
-Fixed::~Fixed()
-{
-	// std::cout << "Destructor called" << std::endl;
-}
+Fixed::~Fixed() {}
 
 int Fixed::getRawBits( void ) const
 {

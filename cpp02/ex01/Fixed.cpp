@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:00:27 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/27 18:46:49 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/27 18:55:56 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void Fixed::setRawBits( int const raw )
 }
 
 std::ostream & operator<<(std::ostream & out, const Fixed & obj) {
-    float displayValue = obj.toFloat(); 
-    out << displayValue;
-    return out;
+	float displayValue = obj.toFloat(); 
+	out << displayValue;
+	return out;
 }
 
 float Fixed::toFloat( void ) const
