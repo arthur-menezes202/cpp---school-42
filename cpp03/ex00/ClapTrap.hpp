@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:16:16 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/29 19:00:29 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/29 19:27:06 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class ClapTrap
 	public:
 		ClapTrap();
 		~ClapTrap();
+		ClapTrap(const ClapTrap &other);
 		ClapTrap(std::string target);
 		ClapTrap & operator=(ClapTrap const &other);
 		void attack(const std::string& target);

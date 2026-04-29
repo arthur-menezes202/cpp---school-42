@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:23:36 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/29 19:11:14 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/29 19:27:32 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << this->_name << " die" << std::endl;
 }
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	*this = other;
+}
+
 ClapTrap::ClapTrap(std::string target)
 {
 	this->_name = target;
