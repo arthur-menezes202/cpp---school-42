@@ -1,28 +1,51 @@
-#include "ClapTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/29 19:54:33 by armeneze          #+#    #+#             */
+/*   Updated: 2026/04/29 21:20:41 by armeneze         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ScavTrap.hpp"
 #include <iostream>
 
 int main() {
-    std::cout << "--- CONSTRUÇÃO ---" << std::endl;
-    ClapTrap hero("Ash");
-    ClapTrap bandit("Badass Psycho");
+    std::cout << "===== TEST 1: CONSTRUCTION AND ATTRIBUTES =====" << std::endl;
+    {
+        ClapTrap clappy("Clap-1");
+        ScavTrap scavvy("Scav-2");
 
-    std::cout << "\n--- ROUND 1: ATAQUE E DANO ---" << std::endl;
-    hero.attack("Badass Psycho");
-    bandit.takeDamage(5); // Bandit perde 5 HP
-
-    std::cout << "\n--- ROUND 2: REPARO ---" << std::endl;
-    bandit.beRepaired(3); // Bandit recupera 3 HP
-
-    std::cout << "\n--- ROUND 3: ESGOTANDO ENERGIA ---" << std::endl;
-    // O ClapTrap começa com 10 de energia. Vamos gastar o resto.
-    for (int i = 0; i < 10; i++) {
-        hero.attack("alvo de treino");
+        std::cout << "\n--- Status Initials ---" << std::endl;
+        clappy.attack("a target");
+        scavvy.attack("the same target");
     }
-    std::cout << "\n--- ROUND 4: MORTE ---" << std::endl;
-    bandit.takeDamage(20); // Dano maior que o HP atual
-    bandit.beRepaired(10); // Não deve funcionar, ele está "morto"
-    bandit.attack("Ash");  // Não deve funcionar
 
-    std::cout << "\n--- DESTRUIÇÃO ---" << std::endl;
+    std::cout << "\n\n===== TEST 2: MODO GUARD GATE =====" << std::endl;
+    {
+        ScavTrap robot("GateKeeper");
+
+        robot.attack("Intruso");
+        robot.takeDamage(30);
+        robot.beRepaired(10);
+
+        robot.guardGate();
+    }
+
+    std::cout << "\n\n===== TEST 3: COPY AND ATTRIBUTION =====" << std::endl;
+    {
+        ScavTrap original("Original");
+        original.guardGate();
+
+        ScavTrap copia(original);
+        std::cout << "Copy name: " << copia.getName() << std::endl;
+
+        ScavTrap outro("Other");
+        outro = original;
+    }
+
     return 0;
 }

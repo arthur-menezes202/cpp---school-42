@@ -4,6 +4,7 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 TARGET   := open
 OBJDIR   := obj
 SRCS     := main.cpp \
+            ScavTrap.cpp \
 			ClapTrap.cpp
 
 OBJS     := $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
