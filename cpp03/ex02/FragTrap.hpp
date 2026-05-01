@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:18:33 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/29 21:24:51 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/05/01 18:12:16 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ class FragTrap: public ClapTrap
 	private:
 
 	public:
+		FragTrap();
 		FragTrap(std::string name);
 		~FragTrap();
 		FragTrap & operator=(FragTrap const &other);
 		FragTrap(const FragTrap &other);
-		void guardGate();
+		void highFivesGuys();
 };
 
 

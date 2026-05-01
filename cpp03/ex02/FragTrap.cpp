@@ -6,17 +6,25 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:29:11 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/29 21:24:51 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/05/01 18:12:23 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap() : ClapTrap()
+{
+	this->_hitPoints = 100;
+    this->_energyPoints = 100;
+    this->_attackDamage = 30;
+    std::cout << "FragTrap " << this->_name << " constructed!" << std::endl;
+}
+
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->_hitPoints = 100;
-    this->_energyPoints = 50;
-    this->_attackDamage = 20;
+    this->_energyPoints = 100;
+    this->_attackDamage = 30;
     std::cout << "FragTrap " << this->_name << " constructed!" << std::endl;
 }
 FragTrap::~FragTrap()
@@ -37,7 +45,7 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 	std::cout << "FragTrap copy constructor called for " << _name << std::endl;
 }
 
-void FragTrap::guardGate()
+void FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap " << _name << " is Gate keeper mode" << std::endl;
+	std::cout << "FragTrap " << _name << " high Fives Guys" << std::endl;
 }

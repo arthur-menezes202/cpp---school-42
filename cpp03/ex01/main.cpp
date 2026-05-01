@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:54:33 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/29 21:20:41 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/05/01 18:14:50 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int main() {
         scavvy.attack("the same target");
     }
 
-    std::cout << "\n\n===== TEST 2: MODO GUARD GATE =====" << std::endl;
+    std::cout << "\n\n===== TEST 2: MOD GUARD GATE =====" << std::endl;
     {
         ScavTrap robot("GateKeeper");
 
-        robot.attack("Intruso");
+        robot.attack("Intruder");
         robot.takeDamage(30);
         robot.beRepaired(10);
 
