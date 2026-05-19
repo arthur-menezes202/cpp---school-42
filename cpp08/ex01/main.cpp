@@ -36,12 +36,13 @@ int main(void)
 		int size = 1000;
 		Span b(size);
 		b.newNumbers(size);
-		std::cout << b.shortestSpan() << std::endl;
-		std::cout << "distance max element: " << b.getDistanceMax() << std::endl;
-		std::cout << "distance min element: " << b.getDistanceMin() << std::endl;
-		std::cout << "max element: " << b.maxEl() << std::endl;
-		std::cout << "min element: " << b.minEl() << std::endl;
-		std::cout << b.longestSpan() << std::endl;
+		b.shortestSpan();
+		std::cout << "max distance element span       : " << b.getDistanceMax() << std::endl;
+		std::cout << "min distance element span       : " << b.getDistanceMin() << std::endl;
+		std::cout << "result MIN distance element span: " << b.shortestSpan() << std::endl;
+		std::cout << "max distance element span:      : " << b.maxEl() << std::endl;
+		std::cout << "min distance element span:      : " << b.minEl() << std::endl;
+		std::cout << "result MAX distance element span: " << b.longestSpan() << std::endl;
 	}
 	catch (const std::exception& e)
 	{

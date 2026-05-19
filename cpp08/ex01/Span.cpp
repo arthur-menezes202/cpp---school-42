@@ -65,12 +65,9 @@ int Span::longestSpan()
 
 void Span::newNumbers(int n)
 {
-	std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(1, 2147483647);
 	for(int i = 0;i < n;i++)
 	{
-		addNumber(distrib(gen));
+		addNumber(rand());
 	}
 }
 

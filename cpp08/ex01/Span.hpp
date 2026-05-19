@@ -7,7 +7,8 @@
 #include <stdexcept>
 #include <vector>
 #include <iterator>
-#include <random>
+#include <cstdlib>
+#include <ctime> 
 class Span
 {
 	private:
