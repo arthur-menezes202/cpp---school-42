@@ -5,12 +5,16 @@
 #include <algorithm>
 #include <iterator> 
 #include <vector>
+#include <sstream>
+#include <stdexcept>
 
 template <typename T>
-typename T::iterator easyfind(T &container, int valorProcurado) {
-	typename T::iterator it = std::find(container.begin(), container.end(), valorProcurado);
+typename T::iterator easyfind(T &container, int valueFind) {
+	typename T::iterator it = std::find(container.begin(), container.end(), valueFind);
 	if (it == container.end()) {
-		throw std::runtime_error("Valor não encontrado no container.");
+		std::ostringstream oss;
+		oss << "Value not found in container: " << valueFind << ".";
+		throw std::runtime_error(oss.str());
 	}
 	return it;
 }
