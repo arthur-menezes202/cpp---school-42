@@ -1,6 +1,5 @@
 CXX      := c++
-CXXFLAGS := 
-# CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 NAME   := PmergeMe
 OBJDIR   := obj
