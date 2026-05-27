@@ -2,6 +2,7 @@
 #define ITER_HPP
 
 #include <iostream>
+#include <typeinfo>
 
 template <typename T>
 void ft_execute(T const &arg) {
