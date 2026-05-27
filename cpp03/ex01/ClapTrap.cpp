@@ -6,11 +6,20 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 16:23:36 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/29 20:16:39 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/05/01 19:33:04 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap()
+{
+	this->_name = "<don't have name>";
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+	std::cout << "ClapTrap " << this->_name << " boot sequence completed. Hello, traveler!" << std::endl;
+}
 
 ClapTrap::~ClapTrap()
 {

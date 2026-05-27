@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:54:33 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/29 21:24:51 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/05/01 19:34:34 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int main() {
         robot.takeDamage(30);
         robot.beRepaired(10);
 
-        robot.guardGate();
+        robot.highFivesGuys();
     }
 
     std::cout << "\n\n===== TEST 3: COPY AND ATTRIBUTION =====" << std::endl;
     {
         FragTrap original("Original");
-        original.guardGate();
+        original.highFivesGuys();
 
         FragTrap copia(original);
         std::cout << "Copy name: " << copia.getName() << std::endl;

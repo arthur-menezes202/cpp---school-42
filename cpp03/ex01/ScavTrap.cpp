@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:29:11 by armeneze          #+#    #+#             */
-/*   Updated: 2026/05/01 18:12:42 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/05/04 15:10:58 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &other)
 	}
 	return *this;
 }
+
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
 	std::cout << "ScavTrap copy constructor called for " << _name << std::endl;
