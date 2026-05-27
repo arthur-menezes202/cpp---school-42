@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:00:27 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/28 19:50:52 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/05/01 16:54:52 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ std::ostream & operator<<(std::ostream & out, const Fixed & obj) {
 
 float Fixed::toFloat( void ) const
 {
+	
 	float result = (float)this->numberFixed / (1 << _fractional_bits);
 	return result;
 }

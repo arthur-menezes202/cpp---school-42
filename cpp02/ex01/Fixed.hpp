@@ -6,15 +6,17 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:14:02 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/27 18:41:12 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/29 16:32:35 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
+
 #include <iostream>
 #include <stdint.h>
 #include <cmath>
+
 class Fixed
 {
 	private:

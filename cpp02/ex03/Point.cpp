@@ -6,7 +6,7 @@
 /*   By: armeneze <armeneze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 20:29:10 by armeneze          #+#    #+#             */
-/*   Updated: 2026/04/29 15:48:11 by armeneze         ###   ########.fr       */
+/*   Updated: 2026/04/29 16:29:17 by armeneze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ Point::Point(Point const &other) : x(other.x), y(other.y) {}
 
 Point &Point::operator=(Point const &other)
 {
-    if (this != &other)
-    {
+	if (this != &other)
+	{
 		(void)other;
-    	return *this;
-    }
-    return *this;
+		return *this;
+	}
+	return *this;
 }
 
 Point::~Point() {}
